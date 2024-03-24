@@ -11,7 +11,7 @@ on:
 jobs:
   analyze:
     name: Analyze
-    runs-on: ubuntu-latest # Suitable for Java projects
+    runs-on: ubuntu-latest
     timeout-minutes: 360
     permissions:
       security-events: write
@@ -21,7 +21,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'java-kotlin' ] # Specify Java-Kotlin for analysis
+        language: [ 'java-kotlin' ]
 
     steps:
     - name: Checkout repository
@@ -31,14 +31,9 @@ jobs:
       uses: github/codeql-action/init@v3
       with:
         languages: ${{ matrix.language }}
-
-    # If Autobuild does not work for your Android project, replace it with a custom build script.
-    # For instance, you might need to run Gradle commands to build your project.
-    # - name: Build with Gradle
-    #   run: ./gradlew build
+        
+    - name: Build with Gradle
+      run: ./gradlew build
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
-      
-    - name: Build with Gradle
-      run: ./gradlew build
