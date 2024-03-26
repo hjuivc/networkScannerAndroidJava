@@ -31,6 +31,9 @@ jobs:
       uses: github/codeql-action/init@v3
       with:
         languages: ${{ matrix.language }}
+
+    - name: Grant execute permission for gradlew
+      run: chmod +x ./gradlew
         
     - name: Build with Gradle
       run: ./gradlew build
