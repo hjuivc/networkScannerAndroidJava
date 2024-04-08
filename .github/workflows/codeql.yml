@@ -1,4 +1,4 @@
-name: "CodeQL"
+name: "CodeQL Analysis"
 
 on:
   push:
@@ -12,23 +12,16 @@ jobs:
   analyze:
     name: Analyze
     runs-on: ubuntu-latest
-    timeout-minutes: 360
     permissions:
       security-events: write
       actions: read
       contents: read
-
-    strategy:
-      fail-fast: false
-      matrix:
-        language: [ 'java-kotlin' ] 
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
 
     - name: Set up JDK 17 with Temurin
-      id: setup-java 
       uses: actions/setup-java@v3
       with:
         java-version: '17'
@@ -41,13 +34,13 @@ jobs:
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
       with:
-        languages: ${{ matrix.language }}
+        languages: 'java'
 
     - name: Grant execute permission for gradlew
       run: chmod +x ./gradlew
-
+        
     - name: Build with Gradle
-      run: ./gradlew build -Dorg.gradle.java.home=${{ steps.setup-java.outputs.java-home }}
+      run: ./gradlew build
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
