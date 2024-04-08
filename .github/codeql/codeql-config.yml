@@ -1,0 +1,4 @@
+name: "Custom CodeQL Analysis"
+disable-default-queries: true
+queries:
+  - uses: github/codeql-go//queries
