@@ -27,6 +27,13 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
+    - name: Set up JDK 17 with Temurin
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin' # Specifies to use Eclipse Temurin
+        cache: gradle
+
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v3
       with:
