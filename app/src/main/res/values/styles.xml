@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Style for rounded TextInputLayout -->
+    <style name="RoundedTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
+        <item name="boxCornerRadiusTopStart">28dp</item>
+        <item name="boxCornerRadiusTopEnd">28dp</item>
+        <item name="boxCornerRadiusBottomEnd">28dp</item>
+        <item name="boxCornerRadiusBottomStart">28dp</item>
+    </style>
+
+    <!-- Style for rounded MaterialButton -->
+    <style name="RoundedMaterialButton" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">28dp</item>
+    </style>
+
+</resources>

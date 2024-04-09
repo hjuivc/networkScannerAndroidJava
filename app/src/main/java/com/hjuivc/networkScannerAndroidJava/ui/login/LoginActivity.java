@@ -18,6 +18,9 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.hjuivc.networkScannerAndroidJava.R;
 import com.hjuivc.networkScannerAndroidJava.ui.login.LoginViewModel;
 import com.hjuivc.networkScannerAndroidJava.ui.login.LoginViewModelFactory;
@@ -38,10 +41,25 @@ private ActivityLoginBinding binding;
         loginViewModel = new ViewModelProvider(this, new LoginViewModelFactory())
                 .get(LoginViewModel.class);
 
-        final EditText usernameEditText = binding.username;
-        final EditText passwordEditText = binding.password;
-        final Button loginButton = binding.login;
+        // Assuming you have `TextInputLayout` around your `EditText` fields in your XML
+        final TextInputEditText usernameEditText = (TextInputEditText) binding.username;
+        final TextInputEditText passwordEditText = (TextInputEditText) binding.password;
+        final MaterialButton loginButton = (MaterialButton) binding.login; // If you specifically need MaterialButton
         final ProgressBar loadingProgressBar = binding.loading;
+
+// Example of setting an error message on the TextInputLayout for the username
+        final TextInputLayout usernameInputLayout = binding.usernameLayout;
+        usernameInputLayout.setError("Error message");
+
+// To clear the error
+        usernameInputLayout.setError(null);
+
+// For the password, similarly
+        final TextInputLayout passwordInputLayout = binding.passwordLayout;
+// Set or clear errors as needed
+        passwordInputLayout.setError("Password error");
+        passwordInputLayout.setError(null);
+
 
         loginViewModel.getLoginFormState().observe(this, new Observer<LoginFormState>() {
             @Override
