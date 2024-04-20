@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">networkScannerAndroidJava</string>
+    <string name="app_name">Network Scanner</string>
     <string name="title_activity_login">Login</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
