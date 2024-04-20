@@ -3,6 +3,8 @@ package  com.hjuivc.networkScannerAndroidJava.ui.login;
 import android.app.Activity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
@@ -25,6 +27,7 @@ import com.hjuivc.networkScannerAndroidJava.R;
 import com.hjuivc.networkScannerAndroidJava.ui.login.LoginViewModel;
 import com.hjuivc.networkScannerAndroidJava.ui.login.LoginViewModelFactory;
 import com.hjuivc.networkScannerAndroidJava.databinding.ActivityLoginBinding;
+import com.hjuivc.networkScannerAndroidJava.ui.register.RegisterActivity;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -47,16 +50,16 @@ private ActivityLoginBinding binding;
         final MaterialButton loginButton = (MaterialButton) binding.login; // If you specifically need MaterialButton
         final ProgressBar loadingProgressBar = binding.loading;
 
-// Example of setting an error message on the TextInputLayout for the username
+        // Example of setting an error message on the TextInputLayout for the username
         final TextInputLayout usernameInputLayout = binding.usernameLayout;
         usernameInputLayout.setError("Error message");
 
-// To clear the error
+        // To clear the error
         usernameInputLayout.setError(null);
 
-// For the password, similarly
+        // For the password, similarly
         final TextInputLayout passwordInputLayout = binding.passwordLayout;
-// Set or clear errors as needed
+        // Set or clear errors as needed
         passwordInputLayout.setError("Password error");
         passwordInputLayout.setError(null);
 
@@ -134,6 +137,15 @@ private ActivityLoginBinding binding;
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login(usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
+            }
+        });
+
+        MaterialButton registerButton = findViewById(R.id.register);
+        registerButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                startActivity(intent);
             }
         });
     }

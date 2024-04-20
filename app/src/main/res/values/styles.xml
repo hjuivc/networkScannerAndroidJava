@@ -1,17 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+    </style>
+
     <!-- Style for rounded TextInputLayout -->
     <style name="RoundedTextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.FilledBox.Dense">
         <item name="boxCornerRadiusTopStart">28dp</item>
         <item name="boxCornerRadiusTopEnd">28dp</item>
         <item name="boxCornerRadiusBottomEnd">28dp</item>
         <item name="boxCornerRadiusBottomStart">28dp</item>
+        <item name="boxBackgroundColor">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorOnPrimary</item>
+    </style>
+
+    <!-- Style for MaterialButton -->
+    <style name="BorderButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="strokeColor">@color/colorPrimary</item>
+        <item name="strokeWidth">1dp</item>
     </style>
 
     <!-- Style for rounded MaterialButton -->
     <style name="RoundedMaterialButton" parent="Widget.MaterialComponents.Button">
         <item name="cornerRadius">28dp</item>
+        <item name="backgroundTint">@color/colorSecondary</item>
+        <item name="android:textColor">@color/colorOnSecondary</item>
+    </style>
+
+    <!-- Style for TextInputLayout with no underline -->
+    <style name="RoundedTextInputLayout.NoUnderline" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxBackgroundMode">none</item>
+    </style>
+
+    <!-- Font style for the app -->
+    <style name="MonospaceText" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">monospace</item>
     </style>
 
 </resources>
