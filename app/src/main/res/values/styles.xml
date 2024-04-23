@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- Default TextAppearance for the app -->
+    <style name="TextAppearance.App.Default" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">monospace</item>
+    </style>
+
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
@@ -9,6 +14,8 @@
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/colorSecondary</item>
         <item name="colorOnSecondary">@color/colorOnSecondary</item>
+        <!-- Default TextAppearance for the app -->
+        <item name="android:textAppearance">@style/TextAppearance.App.Default</item>
     </style>
 
     <!-- Style for rounded TextInputLayout -->
@@ -17,7 +24,7 @@
         <item name="boxCornerRadiusTopEnd">28dp</item>
         <item name="boxCornerRadiusBottomEnd">28dp</item>
         <item name="boxCornerRadiusBottomStart">28dp</item>
-        <item name="android:fontFamily">monospace</item>
+
         <item name="boxBackgroundColor">@color/colorPrimary</item>
         <item name="android:textColor">@color/colorOnPrimary</item>
     </style>
@@ -28,13 +35,13 @@
         <item name="android:textColor">?attr/colorOnSurface</item>
         <item name="strokeColor">@color/colorPrimary</item>
         <item name="strokeWidth">1dp</item>
-        <item name="android:fontFamily">monospace</item>
+
     </style>
 
     <!-- Style for rounded MaterialButton -->
     <style name="RoundedMaterialButton" parent="Widget.MaterialComponents.Button">
         <item name="cornerRadius">28dp</item>
-        <item name="android:fontFamily">monospace</item>
+
         <item name="backgroundTint">@color/colorSecondary</item>
         <item name="android:textColor">@color/colorOnSecondary</item>
     </style>
@@ -44,9 +51,5 @@
         <item name="boxBackgroundMode">none</item>
     </style>
 
-    <!-- Font style for the app -->
-    <style name="MonospaceText" parent="TextAppearance.AppCompat">
-        <item name="android:fontFamily">monospace</item>
-    </style>
 
 </resources>
