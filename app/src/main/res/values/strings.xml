@@ -15,4 +15,6 @@
     <!-- Register logic -->
     <string name="long_press_faq">LONG PRESS HERE TO READ FAQ</string>
     <string name="faq_text">Network Scanner is a free app designed to scan network devices via IP, exclusively available to users aged 18 and over. This app must be used ethically, and all responsibility rests with the user. You must agree to these terms by checking the appropriate box before registering an account.</string>
+    <string name="register_failed">"Registration failed"</string>
+    <string name="invalid_email">Invalid e-mail</string>
 </resources>
