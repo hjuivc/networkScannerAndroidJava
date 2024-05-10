@@ -9,6 +9,7 @@ import com.hjuivc.networkScannerAndroidJava.data.RegisterRepository;
 import com.hjuivc.networkScannerAndroidJava.data.Result;
 import com.hjuivc.networkScannerAndroidJava.data.model.LoggedInUser;
 import com.hjuivc.networkScannerAndroidJava.R;
+import com.hjuivc.networkScannerAndroidJava.data.model.RegisteredInUser;
 import com.hjuivc.networkScannerAndroidJava.ui.login.LoggedInUserView;
 
 public class RegisterViewModel extends ViewModel {
@@ -31,11 +32,11 @@ public class RegisterViewModel extends ViewModel {
 
     public void register(String email, String password) {
         // can be launched in a separate asynchronous job
-        Result<LoggedInUser> result = registerRepository.register(email, password);
+        Result<RegisteredInUser> result = registerRepository.register(email, password);
 
         if (result instanceof Result.Success) {
-            LoggedInUser data = ((Result.Success<LoggedInUser>) result).getData();
-            registerResult.setValue(new RegisterResult(new LoggedInUserView(data.getDisplayName())));
+            RegisteredInUser data = ((Result.Success<RegisteredInUser>) result).getData();
+            registerResult.setValue(new RegisterResult(new RegisteredUserView(data.getEmail())));
         } else {
             registerResult.setValue(new RegisterResult(R.string.register_failed));
         }

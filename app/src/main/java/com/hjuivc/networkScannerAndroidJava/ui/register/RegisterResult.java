@@ -13,6 +13,9 @@ public class RegisterResult {
 
     }
 
+    public RegisterResult(RegisteredUserView registeredUserView) {
+    }
+
     public boolean isSuccess() {
         return success;
     }

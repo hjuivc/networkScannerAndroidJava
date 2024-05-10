@@ -4,11 +4,11 @@ public class RegisterFormState {
     // Data validation state of the register form. Remember that it only has e-mail / password and checked the FAQ checkbox
     private final Integer emailError;
     private final Integer passwordError;
-    private final Integer faqError;
+    private Integer faqError = null;
     private final boolean isDataValid;
 
     // Constructor
-    public RegisterFormState(Integer emailError, Integer passwordError, Integer faqError) {
+    public RegisterFormState(Integer emailError, Integer passwordError) {
         this.emailError = emailError;
         this.passwordError = passwordError;
         this.faqError = faqError;
