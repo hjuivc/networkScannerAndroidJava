@@ -9,7 +9,7 @@ annotation = "1.8.0"
 constraintlayout = "2.1.4"
 lifecycleViewmodelKtx = "2.8.4"
 lifecycleLivedataKtx = "2.8.4"
-activity = "1.9.0"
+activity = "1.9.1"
 
 [libraries]
 junit = { group = "junit", name = "junit", version.ref = "junit" }
